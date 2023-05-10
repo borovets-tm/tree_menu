@@ -1,0 +1,18 @@
+{% load draw_menu %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+</head>
+<body>
+{% draw_menu 'Ноутбуки и компьютеры' %}
+{% for elem in elements_list %}
+    <a href="{% url 'detail_menu' elem.0 %} " style="text-decoration: none;"><pre>{{ elem.1 }}</pre></a>
+{% endfor %}
+{% draw_menu 'Телевизоры и цифровое ТВ' %}
+{% for elem in elements_list %}
+    <a href="{% url 'detail_menu' elem.0 %} " style="text-decoration: none;"><pre>{{ elem.1 }}</pre></a>
+{% endfor %}
+</body>
+</html>
